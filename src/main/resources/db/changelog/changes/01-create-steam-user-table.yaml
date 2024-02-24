@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-steam-user-table
+      author: DevIgor
+      changes:
+        - createTable:
+            tableName: steam_user
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: steamid
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: personaname
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: profileurl
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: avatar
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: avatarmedium
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: avatarfull
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: avatarhash
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
